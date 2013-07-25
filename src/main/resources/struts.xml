@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="add" class="com.xperad.contact.view.ContactAction" method="add">
+            <result name="success" type="chain">index</result>
+            <result name="input" type="chain">index</result>
+        </action>
+
+        <action name="add1" class="com.xperad.contact.view.ContactAction" method="add1">
+            <result name="success" type="chain">index</result>
+            <result name="input" type="chain">index</result>
+        </action>
+
+        <action name="delete" class="com.xperad.contact.view.ContactAction" method="delete">
+            <result name="success" type="chain">index</result>
+        </action>
+
+        <action name="index" class="com.xperad.contact.view.ContactAction">
+            <result name="success">index.jsp</result>
+        </action>
+    </package>
+</struts>
